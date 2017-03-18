@@ -1,0 +1,31 @@
+<section class="form-box">
+
+    <p class="form-title">Gestión de Usuarios</p><br/>
+
+    <section class="form-data-box">
+        Rol:<input type="text" name="user-form-rol" placeholder="Define nivel de acceso"
+            ng-model="user.rolUsuario">
+        Nombre:<input type="text" name="user-form-name" placeholder="Nmbre del usuario"
+            ng-model="user.nombreUsuario">
+        Primer apellido:<input type="text" name="user-form-surname1" placeholder="Primer apellido del usuario"
+            ng-model="user.apellido1Usuario">
+        Segundo apellido:<input type="text" name="user-form-surname2" placeholder="Segundo apellido del usuario"
+            ng-model="user.apellido2Usuario">
+        DNI:<input type="text" name="user-form-dni" placeholder="Documento identificación del usuario"
+            ng-model="user.dniUsuario">
+        Teléfono:<input type="text" name="user-form-tf" placeholder="Teléfono de contacto del usuario"
+            ng-model="user.telefonoUsuario">
+        Mail:<input type="text" name="user-form-email" placeholder="Dirección correo electrónico del usuario"
+            ng-model="user.emailUsuario">
+        Login:<input type="text" name="user-form-login" placeholder="Nickname del usuario"
+            ng-model="user.loginUsuario">
+        Password:<input type="text" name="user-form-password" placeholder="Contraseña de acceso del usuario"
+            ng-model="user.passwordUsuario">
+    </section>
+
+    <section class="form-button-box">
+        <span class="boton form-button" ng-click="userInsert()">Aceptar</span>
+        <span class="boton form-button" ng-click="cancel()">Cancelar</span>
+    </section>
+
+</section>

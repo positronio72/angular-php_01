@@ -1,0 +1,54 @@
+<section class="list">
+
+    <p class="section-title list-title">Lista de Usuarios</p><br/>
+    
+    FiltroNombre: <input type="search" ng-model="q1" placeholder="filtro1..."/>
+    FiltroEmail: <input type="search" ng-model="q2" placeholder="filtro2..."/>
+
+    <section class="list-head-row">
+        <div class="list-head-cell col-rol">Rol</div>
+        <div class="list-head-cell col-name">Nombre</div>
+        <div class="list-head-cell col-name">Apellido 1</div>
+        <div class="list-head-cell col-name">Apellido 2</div>
+        <div class="list-head-cell col-dni-tel">DNI</div>
+        <div class="list-head-cell col-dni-tel">Teléfono</div>
+        <div class="list-head-cell col-mail">eMail</div>
+        <div class="list-head-cell col-name">Login</div>
+        <div class="list-head-cell col-name">Password</div>
+        <div class="height-adjustment-row"></div>
+        <!-- TRUCO -->
+        <!-- El div "height-adjustment-row" hace que el div padre (list-head-row) ajuste su altura a la de los div hijos -->
+        <!-- Dándole la propiedad clear: both; en el CSS -->
+    </section>
+
+    <section class="list-content-row" ng-repeat="user in users | filter: {nombreUsuario:q1, emailUsuario:q2}">
+        <div class="list-content-cell col-rol">{{user.rolUsuario}}</div>
+        <div class="list-content-cell col-name">{{user.nombreUsuario}}</div>
+        <div class="list-content-cell col-name">{{user.apellido1Usuario}}</div>
+        <div class="list-content-cell col-name">{{user.apellido2Usuario}}</div>
+        <div class="list-content-cell col-dni-tel">{{user.dniUsuario}}</div>
+        <div class="list-content-cell col-dni-tel">{{user.telefonoUsuario}}</div>
+        <div class="list-content-cell col-mail">{{user.emailUsuario}}</div>
+        <div class="list-content-cell col-name">{{user.loginUsuario}}</div>
+        <div class="list-content-cell col-name">{{user.passwordUsuario}}</div>
+        <div class="list-content-cell col-icon">
+            <a href="#/usuario/update/{{user.idUsuario}}">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+        </div>
+        <div class="list-content-cell col-icon">
+            <a href="#">
+                <span class="glyphicon glyphicon-trash"></span>
+            </a>
+        </div>
+        <div class="height-adjustment-row"></div>
+        <!-- TRUCO -->
+        <!-- El div "height-adjustment-row" hace que el div padre (list-head-row) ajuste su altura a la de los div hijos -->
+        <!-- Dándole la propiedad clear: both; en el CSS -->
+    </section>
+
+    <section class="list-button-box">
+        <div id="botonNew" class="boton list-button"><a href="#/usuario/insert"><span>Nuevo usuario</span></a></div>
+    </section>
+
+</section>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Material Design -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="style/css/app.css">
+  </head>
+
+  <body>
+
+    <section id="capaSuperior">
+
+      <!-- CABECERA -->
+
+      <header id="header">
+        <section id="limitSup"></section><!-- Banda transparente superior -->
+
+        <section id="cabeceraContenidos">
+          <section id="cabeceraLogo">
+            <img id="logoImg" alt="logotipo" src="style/img/logo/diinte_logo.png" onclick="document.location.href = 'index.html'"/>
+          </section>                   
+          <section id="cabeceraLogin">
+            <div id="botoneraLogin">
+              <div id="botonRegistro" class="boton"><a href="#/usuario/insert"><span>Nuevo usuario</span></a></div>
+              <div id="botonLogin" class="boton"><span><a href="#/usuario/list">Ver lista</a></span></div>
+            </div>
+          </section>
+        </section>
+      </header>
+
+
+      <!-- BANDA NEGRA HORIZONTAL -->
+
+      <nav id="menuH"></nav>
+
+
+      <!-- SECCION CENTRAL -->
+
+      <section id="seccionCentral">
+        <section id="contenidos" ng-view></section>
+      </section>
+
+
+      <!-- PIE DE PAGINA -->
+
+      <footer id="pie">
+        <section id="pieContenidos">
+
+          <section id="enlaces" class="footContent">
+            <section id="infoContacto">
+              <p>
+                <strong>Parc Cientific Universitat de Valencia</strong><br/>
+                C/. Catedrático Agustín Escardino, 9<br/>
+                46980 - Paterna<br/>
+                Valencia, España<br/>
+                <a href="tel:902 090 840">Tel: +34 902 090 840</a><br/>
+                <a href="mailto:info@diinte.es">eMail: info@diinte.es</a>
+              </p>
+            </section>
+          </section><!-- Información de contacto, condiciones legales, etc -->
+
+          <section id="otros" class="footContent">
+            <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1538.9684659783172!2d-0.4233949!3d39.5159131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6045101b36a893%3A0x38b9efe6decd5f6a!2sParc+Cient%C3%ADfic+Universitat+de+Val%C3%A8ncia!5e0!3m2!1ses!2ses!4v1488823379496" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </section>
+          <section id="infoDev">
+            © Aplicación desarrollada por Francisco Miguel Navarro Flores
+          </section>
+
+        </section>
+
+        <section id="limitInf"></section><!-- Banda transparente inferior -->
+      </footer>
+
+      <section id="capaFondo">
+        <div id="franjaSuperior"></div>
+        <div id="franjaBajoMenuH"></div>
+      </section>
+
+    </section>
+
+
+
+    <!-- ¡¡¡¡¡¡ CONSERVAR EL ORDEN DE LOS SCRIPTS !!!!!! -->
+
+    <!-- JQUERY SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <!-- ANGULAR SCRIPT -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    
+    <!-- MATERIAL DESIGN SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+    
+    <!-- APP SCRIPTS -->
+    <script src="app.js"></script>
+    <script src="usuario/usuario-route.js"></script>
+    <script src="usuario/usuario-list.js"></script>
+    <script src="usuario/usuario-form.js"></script>
+    
+  </body>
+
+</html>

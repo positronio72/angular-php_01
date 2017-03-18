@@ -1,0 +1,60 @@
+<section class="form-box">
+
+    <p class="section-title form-title">Gestión de Usuarios</p><br/>
+
+    <section class="form-data-box">
+        <div class="form-input-box">
+            <label for="form-input-rol" class="form-input-label">Rol:</label>
+            <input id="form-input-rol" class="form-input" type="text" name="user-form-rol" placeholder="Define nivel de acceso"
+            ng-model="user.rolUsuario">
+        </div>
+        <div class="form-input-box">
+            <label for="form-input-name" class="form-input-label">Nombre:</label>
+            <input id="form-input-name" class="form-input" type="text" name="user-form-name" placeholder="Nmbre del usuario"
+            ng-model="user.nombreUsuario">
+        </div>
+        <div class="form-input-box">
+            <label for="form-input-ape1" class="form-input-label">Primer apellido:</label>
+            <input id="form-input-ape1" class="form-input" type="text" name="user-form-surname1" placeholder="Primer apellido del usuario"
+            ng-model="user.apellido1Usuario">
+        </div>
+        <div class="form-input-box">
+            <label for="form-input-ape2" class="form-input-label">Segundo apellido:</label>
+            <input id="form-input-ape2" class="form-input" type="text" name="user-form-surname2" placeholder="Segundo apellido del usuario"
+            ng-model="user.apellido2Usuario">
+        </div>
+        <div class="form-input-box">
+            <label for="form-input-dni" class="form-input-label">DNI:</label>
+            <input id="form-input-dni" class="form-input" type="text" name="user-form-dni" placeholder="Documento identificación del usuario"
+            ng-model="user.dniUsuario">
+        </div>
+        <div class="form-input-box">
+            <label for="form-input-tf" class="form-input-label">Teléfono:</label>
+            <input id="form-input-tf" class="form-input" type="text" name="user-form-tf" placeholder="Teléfono de contacto del usuario"
+            ng-model="user.telefonoUsuario">
+        </div>
+        <div class="form-input-box">
+            <label for="form-input-mail" class="form-input-label">Mail:</label>
+            <input id="form-input-mail" class="form-input" type="text" name="user-form-email" placeholder="Dirección correo electrónico del usuario"
+            ng-model="user.emailUsuario">
+        </div>
+        <div class="form-input-box">
+            <label for="form-input-login" class="form-input-label">Login:</label>
+            <input id="form-input-login" class="form-input" type="text" name="user-form-login" placeholder="Nickname del usuario"
+            ng-model="user.loginUsuario">
+        </div>
+        <div class="form-input-box">
+            <label for="form-input-password" class="form-input-label">Password:</label>
+            <input id="form-input-password" class="form-input" type="text" name="user-form-password" placeholder="Contraseña de acceso del usuario"
+            ng-model="user.passwordUsuario">
+        </div>
+        <div class="height-adjustment-row"></div>
+    </section>
+
+    <section class="form-button-box">
+        <span class="boton form-button btn btn-primary" ng-click="userInsert()" ng-show="buttonInsertVisibility">Aceptar</span>
+        <span class="boton form-button btn btn-primary" ng-click="userUpdate()" ng-show="buttonUpdateVisibility">Actualizar usuario</span>
+        <span class="boton form-button btn btn-default" ng-click="cancel()">Cancelar</span>
+    </section>
+
+</section>

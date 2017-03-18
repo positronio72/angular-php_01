@@ -1,0 +1,281 @@
+/* app css stylesheet */
+
+@import "common.scss";
+
+body{
+
+	@import "formularios.scss";
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	min-height: $altoPC;
+	margin: 0;
+
+	background-image: url('../img/fondos/imgFondo.jpg');
+	background-size:100%;
+
+	font-family: Calibri;
+
+	@include reglasBarrasScroll();
+
+	#capaSuperior{
+        width: 80%;//width: 70%;
+        height: 100%;
+        margin: 0 auto;
+
+        #header{
+        	height: 14%;
+
+        	#limitSup{
+        		height: 30%;
+        	}
+
+        	#cabeceraContenidos{
+        		height: 70%;
+        		background-color: rgba(255,255,255,1);
+        		box-shadow: 0 -10px 30px rgba(0,0,0,.4), -10px 0 30px rgba(0,0,0,.4), 10px 0 30px rgba(0,0,0,.4);
+
+        		#cabeceraLogo{
+        			width: 25%;
+        			height: 100%;
+        			float: left;
+
+        			#logoImg{
+        				margin-left: 30px;
+        				width: 180px;
+        				margin-top: 10px;
+        				cursor: pointer;
+        			}
+        		}
+
+        		#cabeceraLogin{
+        			width: 15%;
+        			height: 100%;
+        			float: right;
+
+        			#botoneraLogin{
+        				width: 100%;
+        				margin: 1% 10px 0;
+        				float: right;
+        				padding: 8% 5%;
+
+        				.boton{
+        					@include estiloBotonHeader();
+        					float: right;
+        					margin-top: 0.05%;
+
+                            & a{
+                                color: white;
+                            }
+        				}
+        			}
+
+        			@import "login.scss";
+        		}
+        	}
+        }
+
+        #menuH{
+        	height: 3.5%;
+        	box-shadow: 0 -5px 10px rgba(0,0,0,.5);
+        }
+
+        #seccionCentral{
+        	height: 60%;
+        	margin-top: 1px;
+        	padding: 5px;
+        	background-color: rgba(255,255,255,0.95);
+        	text-align: center;
+        	text-align: -webkit-center;
+            text-align: -moz-center;
+
+            // ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // PARTE VARIABLE DE LA APLICACIÓN ///////////////////////////////////////////////////////////////////////////
+            // ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        	#contenidos{
+        		height: 100%;
+        		float: left;
+        		width: 100%;
+        		padding-top: 2%;
+        		overflow: auto;
+
+                .height-adjustment-row{
+                    clear: both;
+                }
+                .section-title{
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    color: rgba(0,0,0,0.5);
+                }
+
+                .list{
+                    .list-head-row, .list-content-row{
+                        width: 90%;
+                        clear: both;
+                    }
+                    .list-content-row{
+                        &:hover{
+                            background-color: rgba(navy,0.06);
+                            cursor: cell;
+                        }
+                        .list-content-cell{
+                            border-bottom: 1px solid rgba(0,0,0,0.5);
+                        }
+                    }
+                    .list-head-row{
+                        font-weight: bold;
+                        color: navy;
+
+                        .list-head-cell{
+                            background-color: rgba(0,0,0,0.1);
+                            border-top: 1px solid rgba(0,0,0,0.8);
+                            border-bottom: 1px solid rgba(0,0,0,0.8);
+                        }
+                    }
+                    .list-head-cell, .list-content-cell{
+                        width: 12%;
+                        display: inline-block;
+                        padding: 0.3em 0;
+                        margin: 0;
+                        float: left;
+                    }
+                    .col-mail{
+                        width: 16%;
+                    }
+                    .col-name{
+                        width: 8%;
+                    }
+                    .col-icon{
+                        width: 4%;
+                        cursor: pointer;
+                    }
+                    .list-button-box{
+                        margin-top: 2em;
+                        clear: both;
+
+                        & .list-button{
+                            @include estiloBotonHeader();
+                            font-size: 1em;
+                            width: 15%;
+                            & a{
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                .form-box{
+                    text-align: left;
+                    width: 40%;
+                    .form-title{
+                        text-align: center;
+                    }
+                    .form-input-box{
+                        display: block;
+                        padding-top: 0.5em;
+                        clear: both;
+                        & .form-input-label{
+                            float: left;
+                        }
+                        & .form-input{
+                            float: right;
+                            width: 70%;
+                        }
+                    }
+                    .form-button-box{
+                        margin-top: 1.5em;
+                        text-align: center;
+                        clear: both;
+                    }
+                }
+                
+        	}
+
+        }
+
+        #pie{
+        	height: 30%;
+        	margin-top:5px;
+
+        	#pieContenidos{
+        		height: 90%;
+        		background-color: rgba(0,0,0,.2);
+        		color: rgba(0,0,0,.7);
+
+        		.footContent{
+        			padding: 1em;
+        		}
+
+        		#enlaces{
+        			width: 50%;
+        			height: 70%;
+        			float: left;
+        			#infoContacto{
+        				margin-top: 5px;
+        				height: 100%;
+        				text-align: right;
+        				color: rgba(255,255,255,0.7);
+        				& strong{
+        					font-size: 1.1em;
+        				}
+        				& a{
+        					text-decoration: none;
+        					color: inherit;
+        					font-weight: bold;
+        				}
+        			}
+        		}
+
+        		#otros{
+        			padding-top: 5px;
+        			width: 50%;
+        			height: 70%;
+        			float: left;
+        			#mapa{
+        				margin-top: 1em;
+        				width: 60%;
+        				height: 100%;
+        			}
+        		}
+
+        		#infoDev{
+        			height: 30%;
+        			clear: both;
+        			font-size: 1em;
+        			text-align: center;
+        			padding-top: 2em;
+        		}
+        	}
+
+        	#limitInf{
+        		height: 20%;
+        	}
+        }
+    }
+    
+    #capaFondo{
+    	z-index: -1;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+
+    	#franjaSuperior{
+    		width: 100%;
+    		height: 14%;
+    		background-color: rgba(0,0,0,.6);
+    	}
+
+    	#franjaBajoMenuH{
+    		width: 100%;
+    		height: 3.5%;
+    		background-color: rgba(0,0,0,.85);
+    		box-shadow: 0 -10px 20px rgba(0,0,0,.4);
+    	}
+    }
+}
+
+
