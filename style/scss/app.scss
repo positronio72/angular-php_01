@@ -190,6 +190,43 @@ body{
                         margin-top: 1.5em;
                         text-align: center;
                         clear: both;
+
+                        #generate-new-user-button{
+                            margin-left: 2em;
+                        }
+                    }
+                }
+
+                .confirm-box{
+                    width: 45%;
+                    margin-top: 2em;
+                    background-color: rgba(0,0,0,.06);
+                    border-radius: 0.5em;
+                    box-shadow: 10px 10px 10px #888888;
+
+                    & .confirm-title-box{
+                        background-color: rgba(0,0,0,.15);
+                        border-radius: 0.5em 0.5em 0 0;
+                        border-bottom: 1px solid rgba(0,0,0,.6);
+                        padding: 1em 0 0 .1em;
+
+                        & .confirm-title{
+                            color: black;
+                        }
+                    }
+
+                    & .confirm-message-pack{
+                        margin: 3em 0 3em 0;
+                        & .confirm-message{
+                            font:{
+                                weight: bold;
+                                size: 1.2em;
+                            }
+                        }
+                    }
+
+                    & .confirm-button-box{
+                        padding: 0 0 1em 0;
                     }
                 }
                 

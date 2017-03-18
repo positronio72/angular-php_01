@@ -2,6 +2,7 @@ myApp.controller("UsuarioInsertController", ["$scope", "$http", "$location", fun
 
     $scope.user = {};
     $scope.buttonInsertVisibility = true;
+    $scope.buttonGenerateVisibility = true;
     
     // $scope.user = {
     //     "rolUsuario":"usuario",
@@ -16,6 +17,30 @@ myApp.controller("UsuarioInsertController", ["$scope", "$http", "$location", fun
     // };
 
 
+    $scope.generateNewUser = function(){
+        $http({
+            method: "GET",
+            url: "persistencia/usuario/usuario-find-last-user.php"
+        }).success(function(response){
+            $scope.lastUser = response[0];
+            var nextId = parseInt($scope.lastUser.telefonoUsuario.substr(7)) + 1;
+            $scope.user = {
+                "rolUsuario":"usuario",
+                "nombreUsuario":"Usuario" + nextId,
+                "apellido1Usuario":"A1u" + nextId,
+                "apellido2Usuario":"A2u" + nextId,
+                "dniUsuario":"00000000T",
+                "telefonoUsuario":"9600000" + nextId,
+                "emailUsuario":"mail" + nextId + "@usuario.com",
+                "loginUsuario":"u" + nextId,
+                "passwordUsuario":"p" + nextId
+            };
+        }).error(function(response, status){
+            alert("Error status: " + status + ". No se ha podido realizar la operación");
+        });
+    };
+
+
     $scope.userInsert = function(){
 
         // console.log($scope.user);
@@ -25,7 +50,9 @@ myApp.controller("UsuarioInsertController", ["$scope", "$http", "$location", fun
             url: "persistencia/usuario/usuario-insert.php",
             data: $scope.user
         }).success(function(response){
-            $scope.user = response;
+            $scope.user = response[0];
+            alert("El usuario " + $scope.user.nombreUsuario + " ha sido creado correctamente");
+            $location.path("/usuario/list");
         }).error(function(response, status){
             alert("Error status: " + status + ". No se ha podido realizar la operación");
         });
@@ -94,8 +121,8 @@ myApp.controller("UsuarioUpdateController", ["$scope", "$http", "$location", "$r
             data: $scope.user
         }).success(function(response){
             $scope.user = response[0];
-            $location.path("/usuario/list");
             alert("El usuario '" + $scope.user.nombreUsuario + "' ha sido actualizado con éxito.");
+            $location.path("/usuario/list");
         }).error(function(response, status){
             alert("Error status: " + status + ". No se ha podido realizar la operación");
         });
@@ -106,31 +133,48 @@ myApp.controller("UsuarioUpdateController", ["$scope", "$http", "$location", "$r
         $location.path("/usuario/list");
     };
 
+}]);
 
 
+myApp.controller("UsuarioDeleteController", ["$scope", "$http", "$routeParams", "$location", function ($scope, $http, $routeParams, $location) {
+    
+    $scope.user = {};
+    $scope.userSelectedId = $routeParams.idUsuario;
+    // console.log($scope.userSelectedId);
 
-    // // Lo siguente va con el SEGUNDO INTENTO DE MODAL:
-    // $scope.modalScope = Items;// Items = $scope enviado desde la vista modal
- 
-    // $scope.userInsert = function () 
-    // {
-    //     // console.log($scope.user);
 
-    //     $http({
-    //         method: "POST",
-    //         url: "persistencia/usuario/usuario-insert.php",
-    //         data: $scope.user
-    //     }).success(function (data) {
-    //         $scope.user = data;
-    //     }).error(function(data, status) {
-    //         alert("Error status: " + status + ". No se ha podido realizar la operación");
-    //     });
-    // };
- 
-    // $scope.cancel = function () 
-    // {
-    //     $modalInstance.dismiss('cancel');
-    // };
+    $scope.userDelete = function(){
+        // alert("¡¡ ELIMINADO !! Jajajajajajajajajaja");
+        $http({
+            method: "POST",
+            url: "persistencia/usuario/usuario-delete.php?user=" + $scope.userSelectedId
+            }).success(function(response){
+                alert("El usuario " + $scope.user.nombreUsuario + " ha sido borrado con éxito.\n¡¡ ELIMINADO !! Jajajajajajajajajaja");
+                $scope.user = {};
+                $location.path("/usuario/list");
+            }).error(function(response, status){
+                alert("Error status: " + status + ". No se ha podido realizar la operación");
+        });
+    };
+
+    $scope.getSelectedUser = function(){
+        $http({
+            method: "GET",
+            url: "persistencia/usuario/usuario-get.php?user=" + $scope.userSelectedId
+            // Pasar parámetros vía URL --> nombrePhp.php?saludo=hola&texto=Esto es una variable texto
+        }).success(function(response){
+            $scope.user = response[0];
+            $scope.confirmMessage = "¿Estás seguro de eliminar el usuario '" + $scope.user.nombreUsuario + "'?";
+            // $scope.userDelete();
+        }).error(function(response, status){
+            alert("Error status: " + status + ". No se ha podido realizar la operación");
+        });
+    };
+    $scope.getSelectedUser();
+
+    $scope.cancel = function(){
+        $location.path("/usuario/list");
+    };
 
 
 }]);

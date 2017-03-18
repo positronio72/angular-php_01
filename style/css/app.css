@@ -359,6 +359,28 @@ body {
             margin-top: 1.5em;
             text-align: center;
             clear: both; }
+            body #capaSuperior #seccionCentral #contenidos .form-box .form-button-box #generate-new-user-button {
+              margin-left: 2em; }
+        body #capaSuperior #seccionCentral #contenidos .confirm-box {
+          width: 45%;
+          margin-top: 2em;
+          background-color: rgba(0, 0, 0, 0.06);
+          border-radius: 0.5em;
+          box-shadow: 10px 10px 10px #888888; }
+          body #capaSuperior #seccionCentral #contenidos .confirm-box .confirm-title-box {
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 0.5em 0.5em 0 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+            padding: 1em 0 0 .1em; }
+            body #capaSuperior #seccionCentral #contenidos .confirm-box .confirm-title-box .confirm-title {
+              color: black; }
+          body #capaSuperior #seccionCentral #contenidos .confirm-box .confirm-message-pack {
+            margin: 3em 0 3em 0; }
+            body #capaSuperior #seccionCentral #contenidos .confirm-box .confirm-message-pack .confirm-message {
+              font-weight: bold;
+              font-size: 1.2em; }
+          body #capaSuperior #seccionCentral #contenidos .confirm-box .confirm-button-box {
+            padding: 0 0 1em 0; }
     body #capaSuperior #pie {
       height: 30%;
       margin-top: 5px; }

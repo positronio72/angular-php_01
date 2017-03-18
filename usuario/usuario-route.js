@@ -15,6 +15,10 @@ myApp.config(['$routeProvider', function ($routeProvider) {
         templateUrl: "usuario/usuario-form.html",
         controller: "UsuarioUpdateController"
     })
+    .when("/usuario/delete/:idUsuario", {
+        templateUrl: "usuario/usuario-confirm-message.html",
+        controller: "UsuarioDeleteController"
+    })
     .otherwise({
         redirectTo : "/"
     });
