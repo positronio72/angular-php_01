@@ -3,25 +3,22 @@ myApp.controller("UsuarioInsertController", ["$scope", "$http", "$location", fun
     $scope.user = {};
     $scope.buttonInsertVisibility = true;
     $scope.buttonGenerateVisibility = true;
-    
-    // $scope.user = {
-    //     "rolUsuario":"usuario",
-    //     "nombreUsuario":"Usuario1000",
-    //     "apellido1Usuario":"A1u1000",
-    //     "apellido2Usuario":"A2u1000",
-    //     "dniUsuario":"00000000t",
-    //     "telefonoUsuario":"960001000",
-    //     "emailUsuario":"mail1000@usuario.com",
-    //     "loginUsuario":"u1000",
-    //     "passwordUsuario":"p1000"
-    // };
+
+    $scope.loadingStyle = {
+        "margin-top": "2em",
+        "width": "60px"
+    };
 
 
     $scope.generateNewUser = function(){
+        $scope.hideForm = true;
+        $scope.showLoading = true;
         $http({
             method: "GET",
             url: "persistencia/usuario/usuario-find-last-user.php"
         }).success(function(response){
+            $scope.showLoading = false;
+            $scope.hideForm = false;
             $scope.lastUser = response[0];
             var nextId = parseInt($scope.lastUser.telefonoUsuario.substr(7)) + 1;
             $scope.user = {
@@ -94,18 +91,28 @@ myApp.controller("UsuarioInsertController", ["$scope", "$http", "$location", fun
 
 myApp.controller("UsuarioUpdateController", ["$scope", "$http", "$location", "$routeParams", "$timeout", function ($scope, $http, $location, $routeParams, $timeout) {
     
+    $scope.hideForm = true;
     $scope.user = {};
     $scope.buttonUpdateVisibility = true;
 
     $scope.userSelectedId = $routeParams.idUsuario;
     // console.log($scope.userSelectedId);
 
+    $scope.loadingStyle = {
+        "margin-top": "2em",
+        "width": "60px"
+    };
+
+
     $scope.getSelectedUser = function(){
+        $scope.showLoading = true;
         $http({
             method: "GET",
             url: "persistencia/usuario/usuario-get.php?user=" + $scope.userSelectedId
             // Pasar parámetros vía URL --> nombrePhp.php?saludo=hola&texto=Esto es una variable texto
         }).success(function(response){
+            $scope.showLoading = false;
+            $scope.showForm = true;
             $scope.user = response[0];
         }).error(function(response, status){
             alert("Error status: " + status + ". No se ha podido realizar la operación");
@@ -142,9 +149,14 @@ myApp.controller("UsuarioDeleteController", ["$scope", "$http", "$routeParams", 
     $scope.userSelectedId = $routeParams.idUsuario;
     // console.log($scope.userSelectedId);
 
+    $scope.loadingStyle = {
+        "width": "1.7em"
+    };
+    
+    $scope.showLoading = true;
+
 
     $scope.userDelete = function(){
-        // alert("¡¡ ELIMINADO !! Jajajajajajajajajaja");
         $http({
             method: "POST",
             url: "persistencia/usuario/usuario-delete.php?user=" + $scope.userSelectedId
@@ -163,6 +175,7 @@ myApp.controller("UsuarioDeleteController", ["$scope", "$http", "$routeParams", 
             url: "persistencia/usuario/usuario-get.php?user=" + $scope.userSelectedId
             // Pasar parámetros vía URL --> nombrePhp.php?saludo=hola&texto=Esto es una variable texto
         }).success(function(response){
+            $scope.showLoading = false;
             $scope.user = response[0];
             $scope.confirmMessage = "¿Estás seguro de eliminar el usuario '" + $scope.user.nombreUsuario + "'?";
             // $scope.userDelete();

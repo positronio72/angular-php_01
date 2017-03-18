@@ -267,6 +267,8 @@ body {
         width: 100%;
         padding-top: 2%;
         overflow: auto; }
+        body #capaSuperior #seccionCentral #contenidos .img-loading {
+          width: 30px; }
         body #capaSuperior #seccionCentral #contenidos .height-adjustment-row {
           clear: both; }
         body #capaSuperior #seccionCentral #contenidos .section-title {

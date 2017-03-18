@@ -1,12 +1,20 @@
 myApp.controller("UsuarioListController", ["$scope", "$http", function ($scope, $http) {
 
+    $scope.loadingStyle = {
+        "margin-top": "2em",
+        "width": "60px"
+    };
+
     $scope.findAll = function () {
+        $scope.showLoading = true;
     	$http({
     		method: "GET",
             url: "persistencia/usuario/usuario-findAll.php" //Ruta desde el index.html
         })
         .success(function (data, status) {
             // console.log(data + "\nstatus: " + status);
+            $scope.showLoading = false;
+            $scope.showList = true;
             $scope.users = data;
         })
         .error(function (data, status) {
