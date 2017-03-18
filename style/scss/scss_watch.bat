@@ -1,1 +1,0 @@
-scss --watch C:\wamp\www\angular-php_01\style\scss:C:\wamp\www\angular-php_01\style\css
