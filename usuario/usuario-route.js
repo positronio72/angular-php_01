@@ -19,6 +19,10 @@ myApp.config(['$routeProvider', function ($routeProvider) {
         templateUrl: "usuario/usuario-confirm-message.html",
         controller: "UsuarioDeleteController"
     })
+    .when("/modal-message", {
+        templateUrl: "usuario/modal.html",
+        controller: ""
+    })
     .otherwise({
         redirectTo : "/"
     });
