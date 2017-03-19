@@ -368,12 +368,13 @@ body {
           margin-top: 2em;
           background-color: rgba(0, 0, 0, 0.06);
           border-radius: 0.5em;
-          box-shadow: 10px 10px 10px #888888; }
+          box-shadow: 8px 8px 15px #888888; }
           body #capaSuperior #seccionCentral #contenidos .confirm-box .confirm-title-box {
             background-color: rgba(0, 0, 0, 0.15);
-            border-radius: 0.5em 0.5em 0 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.6);
-            padding: 1em 0 0 .1em; }
+            border-radius: 0.5em;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            padding: 1em 0 0 .1em;
+            box-shadow: 0 3px 4px #888888; }
             body #capaSuperior #seccionCentral #contenidos .confirm-box .confirm-title-box .confirm-title {
               color: black; }
           body #capaSuperior #seccionCentral #contenidos .confirm-box .confirm-message-pack {

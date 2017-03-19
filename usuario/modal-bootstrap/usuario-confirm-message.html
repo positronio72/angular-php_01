@@ -1,0 +1,22 @@
+<div class="modal fade modal-sm" data-keyboard="false" data-backdrop="static" id="userModal" tab-index="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="section-title confirm-title"><span class="glyphicon glyphicon-exclamation-sign"></span> Mensaje de confirmación</p>
+            </div>
+            <div class="modal-body">
+                <div class="confirm-message-box">
+                    <span>
+                        <img class="img-loading" src="style/img/animation/loading_spinner.gif" alt="loading_img" ng-show="showLoading" ng-style="loadingStyle">
+                    </span>
+                    <p class="confirm-message">{{confirmMessage}}</p>
+                </div>
+                <div class="height-adjustment-row"></div>
+            </div>
+            <div class="modal-footer">
+                <span class="btn btn-danger" ng-click="userDelete()">Eliminar usuario</span>
+                <span class="btn btn-success" ng-click="cancel()" data-dismiss="modal">Cancelar</span>
+            </div>
+        </div>
+    </div>
+</div>
