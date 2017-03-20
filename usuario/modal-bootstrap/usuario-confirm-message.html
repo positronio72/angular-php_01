@@ -1,18 +1,15 @@
-<div id="userModal" class="modal fade" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+<div id="userModal" class="modal fade">
+    <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <p class="section-title confirm-title"><span class="glyphicon glyphicon-exclamation-sign"></span> Mensaje de confirmación</p>
+            <div class="modal-header confirm-title-box">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <p class="modal-title section-title confirm-title"><span class="glyphicon glyphicon-exclamation-sign"></span> Mensaje de confirmación</p>
             </div>
-            <div class="modal-body">
-                <div class="confirm-message-box">
-                    <span>
-                        <img class="img-loading" src="style/img/animation/loading_spinner.gif" alt="loading_img" ng-show="showLoading" ng-style="loadingStyle">
-                    </span>
-                    <p class="confirm-message">{{confirmMessage}}</p>
-                </div>
-                <div class="height-adjustment-row"></div>
+            <div class="modal-body confirm-message-pack">
+                <span>
+                    <img class="img-loading" src="style/img/animation/loading_spinner.gif" alt="loading_img" ng-show="showLoading" ng-style="loadingStyle">
+                </span>
+                <p class="confirm-message">{{confirmMessage}}</p>
             </div>
             <div class="modal-footer">
                 <span class="btn btn-danger" ng-click="userDelete()">Eliminar usuario</span>

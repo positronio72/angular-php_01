@@ -84,11 +84,11 @@
     margin: 7px 5px;
     padding: 3px 10px;
 
-    @include botonOut($colorGrisBase,black,white,$colorAzulClaro,transparent);
+    @include botonOut($colorGrisBase,black,white,White,transparent);
 
     &:hover{
         transition-duration: .4s;
-        @include botonIn(silver,transparent,rgba(0,0,0,1),rgba($colorAzulClaro,.3),bold);
+        @include botonIn(silver,transparent,rgba(0,0,0,1),rgba(White,.3),bold);
         @include sombraPerimetral(1px,12px,white,none);
     }
 }

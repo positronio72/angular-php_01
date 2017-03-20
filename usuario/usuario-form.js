@@ -152,8 +152,9 @@ myApp.controller("UsuarioDeleteController", ["$scope", "$http", "$routeParams", 
     $scope.loadingStyle = {
         "width": "1.7em"
     };
-    
+
     $scope.showLoading = true;
+
 
 
     $scope.userDelete = function(){

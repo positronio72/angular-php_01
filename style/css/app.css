@@ -8,100 +8,6 @@ body {
   background-image: url("../img/fondos/imgFondo.jpg");
   background-size: 100%;
   font-family: Calibri; }
-  body .ui-dialog {
-    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.6), 1px 0 20px rgba(0, 0, 0, 0.6), 0 1px 20px rgba(0, 0, 0, 0.6), -1px 0 20px rgba(0, 0, 0, 0.6); }
-    body .ui-dialog .ui-dialog-titlebar-close {
-      /*Quita el icono de cerrar ventana por defecto*/
-      display: none; }
-  body .caja-formulario {
-    padding: 20px;
-    font-size: 12px;
-    max-width: 550px;
-    /*Reglas para ventanas modales*/ }
-    body .caja-formulario a {
-      color: orange; }
-    body .caja-formulario.dialog-editar, body .caja-formulario.dialog-new, body .caja-formulario.dialog-login {
-      background-color: #31353e; }
-    body .caja-formulario input:disabled, body .caja-formulario select:disabled {
-      background-color: peachpuff; }
-    body .caja-formulario .tituloFormulario {
-      margin-top: 10px;
-      font-size: 15px;
-      font-weight: bolder;
-      color: white; }
-    body .caja-formulario .registro-bloqueDatos, body .caja-formulario .login-bloqueDatos {
-      margin-top: 10px; }
-      body .caja-formulario .registro-bloqueDatos > span, body .caja-formulario .login-bloqueDatos > span {
-        vertical-align: middle; }
-      body .caja-formulario .registro-bloqueDatos #newArticulo-label-precio-oferta, body .caja-formulario .login-bloqueDatos #newArticulo-label-precio-oferta {
-        padding: 0 10px 0 5px; }
-    body .caja-formulario label {
-      color: white;
-      min-width: 110px; }
-    body .caja-formulario .registro-label-check, body .caja-formulario .login-label-radio {
-      vertical-align: middle; }
-    body .caja-formulario .registro-input, body .caja-formulario .login-input, body .caja-formulario .registro-select {
-      min-width: 190px;
-      padding-left: 5px;
-      border: none; }
-      body .caja-formulario .registro-input:focus, body .caja-formulario .login-input:focus, body .caja-formulario .registro-select:focus {
-        box-shadow: 0 -1px 6px white, 1px 0 6px white, 0 1px 6px white, -1px 0 6px white;
-        transition-duration: .3s; }
-    body .caja-formulario .registro-input-corto {
-      padding-left: 5px;
-      border: none; }
-      body .caja-formulario .registro-input-corto:focus {
-        box-shadow: 0 -1px 6px white, 1px 0 6px white, 0 1px 6px white, -1px 0 6px white;
-        transition-duration: .3s; }
-    body .caja-formulario .registro-label-error, body .caja-formulario .login-label-error {
-      color: orange;
-      font-size: 11px; }
-    body .caja-formulario .formulario-botonera {
-      margin-top: 5px; }
-    body .caja-formulario .formulario-botonera .formulario-boton {
-      display: inline-block;
-      width: 115px;
-      text-align: center;
-      font-size: 12px;
-      margin: 7px 5px;
-      padding: 3px 10px;
-      border-radius: 4px;
-      border-left: 1px solid grey;
-      border-top: 1px solid grey;
-      border-right: 1px solid black;
-      border-bottom: 1px solid black;
-      color: white;
-      background-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 1px 1px 2px transparent;
-      float: left; }
-      body .caja-formulario .formulario-botonera .formulario-boton a {
-        display: inline;
-        text-decoration: none;
-        color: white;
-        width: 60px; }
-      body .caja-formulario .formulario-botonera .formulario-boton:hover {
-        transition-duration: .4s;
-        border-radius: 4px;
-        border-left: 1px solid silver;
-        border-top: 1px solid silver;
-        border-right: 1px solid transparent;
-        border-bottom: 1px solid transparent;
-        cursor: pointer;
-        color: #e6e6e6;
-        background-color: rgba(0, 0, 0, 0.05);
-        box-shadow: none;
-        opacity: .9;
-        font-weight: normal;
-        box-shadow: 0 -1px 12px white, 1px 0 12px white, 0 1px 12px white, -1px 0 12px white; }
-  body #caja-filtro #filtro-titulo {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #476589;
-    margin-top: 0.5em; }
-  body #caja-filtro #filtro-campo {
-    margin-right: 1em; }
-  body #caja-filtro .btn-filtro {
-    margin: 1em; }
   body ::-webkit-scrollbar-thumb {
     background-color: #ff8000; }
   body ::-webkit-scrollbar-track {
@@ -138,44 +44,12 @@ body {
             width: 100%;
             margin: 1% 10px 0;
             float: right;
-            padding: 8% 5%; }
-            body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #botoneraLogin .boton {
-              width: 70%;
-              text-align: center;
-              font-size: 11px;
-              margin: 7px 5px;
-              padding: 3px 10px;
-              border-radius: 4px;
-              border-left: 1px solid #aaaaaa;
-              border-top: 1px solid #aaaaaa;
-              border-right: 1px solid black;
-              border-bottom: 1px solid black;
-              color: white;
-              background-color: #476589;
-              box-shadow: 1px 1px 2px transparent;
-              float: right;
-              margin-top: 0.05%; }
-              body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #botoneraLogin .boton a {
-                display: inline;
-                text-decoration: none;
-                color: black;
-                width: 60px; }
-              body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #botoneraLogin .boton:hover {
-                transition-duration: .4s;
-                border-radius: 4px;
-                border-left: 1px solid silver;
-                border-top: 1px solid silver;
-                border-right: 1px solid transparent;
-                border-bottom: 1px solid transparent;
-                cursor: pointer;
-                color: black;
-                background-color: rgba(71, 101, 137, 0.3);
-                box-shadow: none;
-                opacity: .9;
-                font-weight: bold;
-                box-shadow: 0 -1px 12px white, 1px 0 12px white, 0 1px 12px white, -1px 0 12px white; }
-              body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #botoneraLogin .boton a {
-                color: white; }
+            padding: 1% 5%; }
+            body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #botoneraLogin .login-btn {
+              width: 60%;
+              clear: both;
+              margin: .1em 0;
+              float: right; }
           body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #cajaInfoLogin {
             max-width: 95%;
             margin: 10px;
@@ -185,52 +59,6 @@ body {
               margin-top: 0; }
             body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #cajaInfoLogin #dropdownMenu1 {
               margin-bottom: 2px; }
-            body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #cajaInfoLogin .btn {
-              width: 70%;
-              text-align: center;
-              font-size: 11px;
-              margin: 7px 5px;
-              padding: 3px 10px;
-              border-radius: 4px;
-              border-left: 1px solid #aaaaaa;
-              border-top: 1px solid #aaaaaa;
-              border-right: 1px solid black;
-              border-bottom: 1px solid black;
-              color: white;
-              background-color: #476589;
-              box-shadow: 1px 1px 2px transparent;
-              padding: 2px 10px;
-              font-size: 12px; }
-              body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #cajaInfoLogin .btn a {
-                display: inline;
-                text-decoration: none;
-                color: black;
-                width: 60px; }
-              body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #cajaInfoLogin .btn:hover {
-                transition-duration: .4s;
-                border-radius: 4px;
-                border-left: 1px solid silver;
-                border-top: 1px solid silver;
-                border-right: 1px solid transparent;
-                border-bottom: 1px solid transparent;
-                cursor: pointer;
-                color: black;
-                background-color: rgba(71, 101, 137, 0.3);
-                box-shadow: none;
-                opacity: .9;
-                font-weight: bold;
-                box-shadow: 0 -1px 12px white, 1px 0 12px white, 0 1px 12px white, -1px 0 12px white; }
-              body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #cajaInfoLogin .btn #caja-texto-login {
-                display: inline-block;
-                vertical-align: middle;
-                margin: 0;
-                padding: 0;
-                max-width: 60px;
-                /*Reglas necesarias para text-overflow*/
-                /*El contenedor debe ser de bloque*/
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis; }
             body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #cajaInfoLogin #iconoUsuario {
               width: 15px; }
             body #capaSuperior #header #cabeceraContenidos #cabeceraLogin #cajaInfoLogin ul {
@@ -318,7 +146,7 @@ body {
             border-right: 1px solid black;
             border-bottom: 1px solid black;
             color: white;
-            background-color: #476589;
+            background-color: White;
             box-shadow: 1px 1px 2px transparent;
             font-size: 1em;
             width: 15%; }
@@ -336,7 +164,7 @@ body {
               border-bottom: 1px solid transparent;
               cursor: pointer;
               color: black;
-              background-color: rgba(71, 101, 137, 0.3);
+              background-color: rgba(255, 255, 255, 0.3);
               box-shadow: none;
               opacity: .9;
               font-weight: bold;
